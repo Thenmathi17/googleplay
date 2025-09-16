@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Creepster', cursive;
+  color: #ff0000;
+  background: url("image/book\ bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: brightness(0.7);
+}
+
+/* Wrong / Close Button */
+.wrong-icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: red;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.wrong-icon:hover {
+  color: darkred;
+  text-shadow: 0 0 10px red;
+}
+
+.books-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.books-container h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 10px black, 0 0 20px red;
+  margin-bottom: 40px;
+}
+
+.books-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Book Cards Larger & Horizontal */
+.book-card {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid red;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px red;
+  transition: transform 0.3s;
+}
+.book-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px crimson;
+}
+
+.book-logo {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border: 2px solid red;
+  border-radius: 10px;
+  margin-right: 20px;
+  box-shadow: 0 0 15px crimson;
+}
+
+.book-card p {
+  flex: 1;
+  font-size: 1.5rem;
+  color: #ff4444;
+  text-shadow: 0 0 5px black;
+  margin: 0;
+}
+.book-card {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid red;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px red;
+  transition: transform 0.3s;
+  text-decoration: none;   /* remove underline */
+  color: inherit;          /* keep horror colors */
+}
+.book-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px crimson;
+}

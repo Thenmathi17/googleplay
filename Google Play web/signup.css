@@ -1,0 +1,122 @@
+/* Background Layers */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Creepster', cursive;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+  color: white;
+}
+
+.bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: flicker 6s infinite;
+  z-index: -1;
+}
+
+.layer1 { background-image: url('image/back1.png!w700wp'); opacity: 0.4; }
+.layer2 { background-image: url('image/back2.webp'); opacity: 0.2; }
+.layer3 { background-image: url('image/back3.jpg'); opacity: 0.3; }
+
+@keyframes flicker {a
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Signup Form */
+.signup-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  padding: 30px;
+  background: rgba(20, 20, 20, 0.85);
+  border: 2px solid red;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 25px red;
+}
+
+.signup-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: red;
+  text-shadow: 0 0 10px darkred, 0 0 20px black;
+}
+
+.signup-input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  background: black;
+  color: white;
+  border: 1px solid red;
+  transition: 0.3s;
+}
+
+.signup-input:focus {
+  box-shadow: 0 0 10px red;
+  background: #111;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: red;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background: darkred;
+  box-shadow: 0 0 15px red;
+}
+
+.login-text {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.login-text a {
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-text a:hover {
+  text-shadow: 0 0 10px red;
+}
+/* Cross Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: darkred;
+  text-shadow: 0 0 10px red;
+}

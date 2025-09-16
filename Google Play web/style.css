@@ -1,0 +1,259 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Creepster', sans-serif;
+}
+
+body {
+  background: url("image/horror-bg.jpg") no-repeat center/cover;
+  color: #f8f8f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px red);
+  animation: pulseGlow 2s infinite alternate;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  color: red;
+  text-shadow: 0 0 10px black;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav a:hover {
+  color: crimson;
+  text-shadow: 0 0 8px red;
+}
+
+.right-section {
+  display: flex;
+  gap: 25px;
+}
+
+.right-section .material-icons {
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.right-section .material-icons:hover {
+  color: crimson;
+  transform: scale(1.1);
+}
+
+/* DEVICE BAR */
+.device-bar {
+  display: flex;
+  gap: 15px;
+  padding: 15px 30px;
+  background: rgba(8, 8, 8, 0.9);
+  border-bottom: 2px solid crimson;
+}
+
+.device-bar button {
+  background: rgba(100, 95, 95, 0.759);
+  border: 1px solid crimson;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.device-bar button:hover {
+  background: crimson;
+  color: black;
+}
+
+.device-bar .device-icon svg {
+  display: block;
+}
+
+/* MAIN CONTENT 3x3 GRID */
+.container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  border: 2px solid red;
+  border-radius: 10px;
+  box-shadow: 0 0 15px red;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 320px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px crimson;
+}
+
+.card-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.card-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+}
+
+.install-btn {
+  background: #00ff99;
+  border: none;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.install-btn:hover {
+  background: #00cc77;
+}
+
+/* FOOTER */
+.footer {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 2px solid red;
+}
+
+@keyframes pulseGlow {
+  from { filter: drop-shadow(0 0 5px red); }
+  to { filter: drop-shadow(0 0 20px crimson); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .container { grid-template-columns: 1fr; }
+  .header, .device-bar { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+/* Sidebar panel */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.95);
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1000;
+  color: #f8f8f8;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid crimson;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  color: red;
+  font-family: 'Creepster', sans-serif;
+}
+
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+
+/* Search bar hidden initially */
+.search-bar {
+  width: 0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid crimson;
+  outline: none;
+  font-size: 14px;
+  background: #111;
+  color: #f8f8f8;
+  transition: width 0.4s, padding 0.4s;
+  margin-right: 10px;
+  opacity: 0;
+}
+
+/* When active, make it visible */
+.search-bar.active {
+  width: 180px;
+  padding: 5px 10px;
+  opacity: 1;
+}

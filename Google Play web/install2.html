@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installing Horror App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Creepster', cursive;
+      background: #0b0b0b;
+      color: #39ff14;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Mist animation */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(57,255,20,0.1) 0%, transparent 70%);
+      animation: mist 8s infinite linear;
+    }
+
+    @keyframes mist {
+      0% {transform: translate(-50%, -50%) rotate(0deg);}
+      100% {transform: translate(-50%, -50%) rotate(360deg);}
+    }
+
+    .install-container {
+      text-align: center;
+      background: rgba(0,0,0,0.85);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #39ff14;
+      position: relative;
+      width: 320px;
+      z-index: 1;
+    }
+
+    /* Cancel/Wrong Icon */
+    .cancel-icon {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.8rem;
+      color: #ff0000;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .cancel-icon:hover {
+      transform: scale(1.2);
+    }
+
+    .app-logo {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      border: 2px solid #39ff14;
+      box-shadow: 0 0 20px #39ff14;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+      color: #39ff14;
+      text-shadow: 0 0 10px black;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 30px;
+      background: #111;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #39ff14;
+      margin-bottom: 10px;
+    }
+
+    .progress {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #39ff14, #0f0);
+      text-align: center;
+      color: black;
+      font-weight: bold;
+      line-height: 30px;
+      border-radius: 20px 0 0 20px;
+      transition: width 0.3s;
+    }
+
+    .ghost {
+      font-size: 3rem;
+      animation: float 2s infinite alternate;
+      margin-bottom: 10px;
+    }
+
+    @keyframes float {
+      0% {transform: translateY(0);}
+      100% {transform: translateY(-15px);}
+    }
+  </style>
+</head>
+<body>
+  <div class="install-container">
+    <!-- Cancel/Wrong Icon -->
+    <div class="cancel-icon" title="Cancel Installation" onclick="window.location.href='index.html'">✖</div>
+
+    <div class="ghost">👻</div>
+    <img src="image/icon2.png" alt="App Logo" class="app-logo">
+    <h1>Installing Unkilled Zombie App...</h1>
+    <div class="progress-bar">
+      <div class="progress" id="progress">0%</div>
+    </div>
+    <p>Beware… the installation is haunted!</p>
+  </div>
+
+  <script>
+    let progress = 0;
+    const progressBar = document.getElementById('progress');
+
+    function updateProgress() {
+      if(progress < 100){
+        progress += Math.floor(Math.random() * 6) + 2;
+        if(progress > 100) progress = 100;
+        progressBar.style.width = progress + '%';
+        progressBar.textContent = progress + '%';
+        setTimeout(updateProgress, 400);
+      } else {
+        progressBar.textContent = "Installed!";
+      }
+    }
+
+    updateProgress();
+  </script>
+</body>
+</html>

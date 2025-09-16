@@ -1,0 +1,265 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Creepster', cursive;
+  color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: black;
+  position: relative;
+}
+
+/* Animated background layers */
+.bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("image/horror-bg.jpg") repeat;
+  background-size: cover;
+  opacity: 0.4;
+  animation: moveBg 30s linear infinite;
+  z-index: -3;
+}
+
+.layer2 {
+  animation-duration: 50s;
+  opacity: 0.25;
+  filter: blur(3px);
+}
+
+.layer3 {
+  animation-duration: 70s;
+  opacity: 0.15;
+  filter: blur(6px);
+}
+
+@keyframes moveBg {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-50px, 50px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Login Container */
+.login-container {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px 35px;
+  border: 2px solid crimson;
+  border-radius: 15px;
+  box-shadow: 0 0 20px crimson;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: glow 2s infinite alternate;
+}
+
+/* Title */
+.login-container h1 {
+  color: red;
+  text-shadow: 0 0 10px black, 0 0 20px crimson;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.3; }
+}
+
+/* Glow animation */
+@keyframes glow {
+  from { box-shadow: 0 0 10px crimson; }
+  to { box-shadow: 0 0 25px red; }
+}
+
+/* Input Fields */
+.login-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  border: 1px solid crimson;
+  background: #111;
+  color: #f8f8f8;
+  outline: none;
+  font-size: 16px;
+  box-shadow: 0 0 5px red inset;
+  transition: 0.3s;
+}
+
+.login-input:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 10px crimson inset;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: crimson;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 10px red;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: red;
+  box-shadow: 0 0 20px crimson;
+  transform: scale(1.05);
+}
+
+/* Signup text */
+.signup-text {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: crimson;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.signup-text a:hover {
+  text-shadow: 0 0 5px red;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .login-container { padding: 30px 20px; }
+}
+/* Close icon */
+.close-icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: red;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+  z-index: 2;
+}
+
+.close-icon:hover {
+  color: crimson;
+  transform: scale(1.2);
+}
+/* Full-screen horror background image */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("image/") no-repeat center center/cover;
+  z-index: -2;
+  filter: brightness(0.5); /* Darken for scary effect */
+}
+
+/* Animated fog/overlay layers */
+.bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.layer1 {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.layer2 {
+  background: url("images/back3.png") repeat;
+  opacity: 0.2;
+  animation: floatFog 60s linear infinite;
+}
+
+.layer3 {
+  background: radial-gradient(circle, rgba(0,0,0,0.6), transparent 70%);
+}
+
+@keyframes floatFog {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 0; }
+}
+
+/* Center login container */
+.login-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  margin: 100px auto;
+  color: #fff;
+  font-family: 'Creepster', cursive;
+  box-shadow: 0 0 20px red;
+}
+
+.close-icon {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  color: red;
+  transition: 0.3s;
+}
+
+.close-icon:hover {
+  transform: scale(1.2);
+}
+
+.login-input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.login-btn {
+  background: red;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: darkred;
+}
+
+.signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: red;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: solid;
+}
